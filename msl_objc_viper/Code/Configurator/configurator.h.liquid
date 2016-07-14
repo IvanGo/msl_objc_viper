@@ -1,0 +1,8 @@
+{% include 'header' %}
+
+
+@interface {{ prefix }}{{ module_info.name }}Configurator : NSObject
+
+- (void) configureController: (UIViewController *)target;
+
+@end
