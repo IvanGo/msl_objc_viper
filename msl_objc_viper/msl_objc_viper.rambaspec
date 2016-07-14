@@ -16,6 +16,7 @@ code_files:
 - {name: View/ViewOutput.h, path: Code/View/view_output.h.liquid}
 - {name: View/ViewController.h, path: Code/View/viewcontroller.h.liquid}
 - {name: View/ViewController.m, path: Code/View/viewcontroller.m.liquid}
+- {name: View/ViewController.xib, path: Code/View/viewcontroller.xib.liquid}
 
 # Presenter layer
 - {name: Presenter/ModuleInput.h, path: Code/Presenter/module_input.h.liquid}
