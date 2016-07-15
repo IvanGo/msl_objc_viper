@@ -1,9 +1,8 @@
 {% include 'header' %}
 
 #import <Foundation/Foundation.h>
-#import <ViperMcFlurry/ViperMcFlurry.h>
 
-@protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput <NSObject>
 
 /**
  @author {{ developer.name }}

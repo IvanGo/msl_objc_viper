@@ -1,16 +1,40 @@
 {% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}Configurator.h"
+
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
-#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
-#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
+#import "{{ prefix }}{{ module_info.name }}Interactor.h"
+#import "{{ prefix }}{{ module_info.name }}Presenter.h"
 
 
 @implementation {{ prefix }}{{ module_info.name }}Configurator
 
 - (void) configureController: (UIViewController *)target
 {
-	
+	if ([target isKindOfClass: [{{ prefix }}{{ module_info.name }}ViewController class]])
+    {
+        {{ prefix }}{{ module_info.name }}ViewController *v_controller = ({{ prefix }}{{ module_info.name }}ViewController *)target;
+        
+        {{ prefix }}{{ module_info.name }}Interactor *v_interactor = [{{ prefix }}{{ module_info.name }}Interactor new];
+        {{ prefix }}{{ module_info.name }}Presenter  *v_presenter  = [{{ prefix }}{{ module_info.name }}Presenter new];
+        
+        /*
+         View: displays what it is told to by the Presenter and relays user input back to the Presenter.
+         */
+        v_controller.output = v_presenter;
+        
+        /*
+         Presenter: contains view logic for preparing content for display (as received from the Interactor) and for reacting to user inputs (by requesting new data from the Interactor)
+         */
+        v_presenter.view       = v_controller;
+        v_presenter.interactor = v_interactor;
+        
+        /*
+         Interactor: contains the business logic as specified by a use case.
+         */
+        v_interactor.output = v_presenter;
+        
+    }
 }
 
 @end

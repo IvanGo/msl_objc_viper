@@ -1,6 +1,7 @@
 {% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
+#import "{{ prefix }}{{ module_info.name }}Configurator.h"
 
 #import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
 
@@ -10,6 +11,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+
+    {{ prefix }}{{ module_info.name }}Configurator *v_configurator = [{{ prefix }}{{ module_info.name }}Configurator new];
+    [v_configurator configureController: self];
 
 	[self.output didTriggerViewReadyEvent];
 }
