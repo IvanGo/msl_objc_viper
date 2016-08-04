@@ -4,7 +4,6 @@
 
 #import "{{ prefix }}{{ module_info.name }}ViewInput.h"
 #import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
-#import "{{ prefix }}{{ module_info.name }}RouterInput.h"
 
 @implementation {{ prefix }}{{ module_info.name }}Presenter
 
@@ -16,9 +15,6 @@
 
 #pragma mark - Методы {{ prefix }}{{ module_info.name }}ViewOutput
 
-- (void)didTriggerViewReadyEvent {
-	[self.view setupInitialState];
-}
 
 #pragma mark - Методы {{ prefix }}{{ module_info.name }}InteractorOutput
 

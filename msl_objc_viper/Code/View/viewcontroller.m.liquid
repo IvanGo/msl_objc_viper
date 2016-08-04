@@ -5,6 +5,9 @@
 
 #import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
 
+@interface {{ prefix }}{{ module_info.name }}ViewController()
+@end
+
 @implementation {{ prefix }}{{ module_info.name }}ViewController
 
 #pragma mark - Методы жизненного цикла
@@ -20,8 +23,6 @@
 
 #pragma mark - Методы {{ prefix }}{{ module_info.name }}ViewInput
 
-- (void)setupInitialState {
-	// В этом методе происходит настройка параметров view, зависящих от ее жизненого цикла (создание элементов, анимации и пр.)
-}
+
 
 @end
